@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
-const apiAddress = "http://192.168.20.32:5000";
+// const apiAddress = "http://192.168.20.32:5000";
+const apiAddress = "http://randomnomad.xyz:5000";
 
 const setCookie = (name, value, days) => {
   var expires = "";
