@@ -6,10 +6,6 @@ import "./App.css";
 
 const App = () => {
   return (
-    // <div className="app">
-    //   <LoginScreen />
-    //   <SignUpScreen />
-    // </div>
     <Router>
       <Routes>
         <Route path="/signup" element={<SignUpScreen />} />

@@ -16,6 +16,7 @@ import { getCookie, apiAddress } from "./global";
 import { useNavigate, useParams } from "react-router-dom";
 
 const DashboardScreen = () => {
+  const [refresh, setRefresh] = useState(false);
   const [modalStatus, setModalStatus] = useState(false);
   const [keyData, setKeyData] = useState([]);
   const [errorMessage, setErrorMessage] = useState("");
@@ -50,7 +51,10 @@ const DashboardScreen = () => {
       });
       // .then((response) => response.text())
       // .then((data) => console.log(data));
-      window.location.reload(false);
+      // window.location.reload(false);
+      // navigate("/dashboard");
+      setRefresh(!refresh);
+      setApiKey("");
     }
   };
 
@@ -78,7 +82,7 @@ const DashboardScreen = () => {
       setModalStatus(true);
     }
     getkeys(uid);
-  }, []);
+  }, [refresh]);
 
   return (
     <div className="dashboardScreen">
