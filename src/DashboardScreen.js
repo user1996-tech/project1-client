@@ -12,7 +12,7 @@ import {
   Button,
 } from "@mui/material";
 import Modal from "./Modal";
-import { getCookie } from "./global";
+import { getCookie, apiAddress } from "./global";
 import { useNavigate, useParams } from "react-router-dom";
 
 const DashboardScreen = () => {
@@ -45,9 +45,7 @@ const DashboardScreen = () => {
     if (apiKey === "") {
       setErrorMessage("Generate API key first");
     } else {
-      await fetch(
-        `http://192.168.20.32:5000/apikey/add/${uid}&${apiKey}`
-      ).catch((err) => {
+      await fetch(`${apiAddress}/apikey/add/${uid}&${apiKey}`).catch((err) => {
         console.log(err);
       });
       // .then((response) => response.text())
@@ -64,7 +62,7 @@ const DashboardScreen = () => {
 
   useEffect(() => {
     const getkeys = async (uid) => {
-      await fetch(`http://192.168.20.32:5000/apikey/get/${uid}`)
+      await fetch(`${apiAddress}/apikey/get/${uid}`)
         .catch((err) => {
           console.log(err);
         })

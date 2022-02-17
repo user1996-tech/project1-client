@@ -58,4 +58,4 @@ const checkLoggedIn = async (navigate, to = "/dashboard") => {
   }
 };
 
-export { setCookie, getCookie, login, signUp, checkLoggedIn };
+export { setCookie, getCookie, login, signUp, checkLoggedIn, apiAddress };
